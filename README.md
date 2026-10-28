@@ -1,5 +1,7 @@
 # upgrade-safety-diff
 
+[![npm](https://img.shields.io/npm/v/upgrade-safety-diff.svg)](https://www.npmjs.com/package/upgrade-safety-diff) [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Compare two Foundry storage layouts before a proxy upgrade. You give it the layout of the deployed implementation and the layout of the new one, and it lists storage changes that can corrupt proxy state.
 
 **This tool checks storage layout only. It does not prove that an upgrade is safe.** It does not look at code, initializers, reinitializers, access control, `delegatecall` targets, function selectors or runtime state. A clean result means only that no layout problem it knows about was found. It is a review aid, not an audit, and it will miss things.
