@@ -73,6 +73,8 @@ critical 2  high 0  medium 0  info 0
 
 `npm test` runs every check against compiled fixture pairs (`fixtures/contracts`, built with forge 1.8.5 and solc 0.8.24) and against storage-layout test pairs taken from OpenZeppelin's `openzeppelin-upgrades` repository. See `VALIDATION.md`.
 
+Want a hand with a pre-audit review of a Solidity project? The [Smart Contract Pre-Audit Review Pack](https://payhip.com/b/G5agO) is a self-review aid with a 66-item checklist, a 40-point audit-readiness scoring sheet and scope/known-issues/threat-model templates. It is not an audit and gives no security guarantee ($19, our own paid product).
+
 ## License
 
 MIT
