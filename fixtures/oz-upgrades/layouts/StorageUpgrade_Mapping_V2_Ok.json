@@ -1,0 +1,52 @@
+{
+  "storage": [
+    {
+      "astId": 283,
+      "contract": "src/Storage.sol:StorageUpgrade_Mapping_V2_Ok",
+      "label": "m1",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_mapping(t_uint256,t_array(t_uint256)10_storage)"
+    },
+    {
+      "astId": 287,
+      "contract": "src/Storage.sol:StorageUpgrade_Mapping_V2_Ok",
+      "label": "m2",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_mapping(t_string_memory_ptr,t_uint256)"
+    }
+  ],
+  "types": {
+    "t_array(t_uint256)10_storage": {
+      "encoding": "inplace",
+      "label": "uint256[10]",
+      "numberOfBytes": "320",
+      "base": "t_uint256"
+    },
+    "t_mapping(t_string_memory_ptr,t_uint256)": {
+      "encoding": "mapping",
+      "key": "t_string_memory_ptr",
+      "label": "mapping(string => uint256)",
+      "numberOfBytes": "32",
+      "value": "t_uint256"
+    },
+    "t_mapping(t_uint256,t_array(t_uint256)10_storage)": {
+      "encoding": "mapping",
+      "key": "t_uint256",
+      "label": "mapping(uint256 => uint256[10])",
+      "numberOfBytes": "32",
+      "value": "t_array(t_uint256)10_storage"
+    },
+    "t_string_memory_ptr": {
+      "encoding": "bytes",
+      "label": "string",
+      "numberOfBytes": "32"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

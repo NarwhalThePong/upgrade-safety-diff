@@ -1,0 +1,75 @@
+{
+  "storage": [
+    {
+      "astId": 9,
+      "contract": "src/StructV1.sol:StructV1",
+      "label": "pos",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_struct(Pos)6_storage"
+    },
+    {
+      "astId": 14,
+      "contract": "src/StructV1.sol:StructV1",
+      "label": "byUser",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_mapping(t_address,t_struct(Pos)6_storage)"
+    },
+    {
+      "astId": 16,
+      "contract": "src/StructV1.sol:StructV1",
+      "label": "z",
+      "offset": 0,
+      "slot": "3",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    },
+    "t_mapping(t_address,t_struct(Pos)6_storage)": {
+      "encoding": "mapping",
+      "key": "t_address",
+      "label": "mapping(address => struct StructV1.Pos)",
+      "numberOfBytes": "32",
+      "value": "t_struct(Pos)6_storage"
+    },
+    "t_struct(Pos)6_storage": {
+      "encoding": "inplace",
+      "label": "struct StructV1.Pos",
+      "numberOfBytes": "64",
+      "members": [
+        {
+          "astId": 3,
+          "contract": "src/StructV1.sol:StructV1",
+          "label": "amt",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        },
+        {
+          "astId": 5,
+          "contract": "src/StructV1.sol:StructV1",
+          "label": "t",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_uint64"
+        }
+      ]
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    },
+    "t_uint64": {
+      "encoding": "inplace",
+      "label": "uint64",
+      "numberOfBytes": "8"
+    }
+  }
+}

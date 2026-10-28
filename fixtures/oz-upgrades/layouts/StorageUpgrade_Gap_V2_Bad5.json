@@ -1,0 +1,65 @@
+{
+  "storage": [
+    {
+      "astId": 379,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Bad5",
+      "label": "a",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 381,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Bad5",
+      "label": "b",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 383,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Bad5",
+      "label": "c",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 385,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Bad5",
+      "label": "d",
+      "offset": 0,
+      "slot": "3",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 389,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Bad5",
+      "label": "__gap",
+      "offset": 0,
+      "slot": "4",
+      "type": "t_array(t_uint256)47_storage"
+    },
+    {
+      "astId": 391,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Bad5",
+      "label": "z",
+      "offset": 0,
+      "slot": "51",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_array(t_uint256)47_storage": {
+      "encoding": "inplace",
+      "label": "uint256[47]",
+      "numberOfBytes": "1504",
+      "base": "t_uint256"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

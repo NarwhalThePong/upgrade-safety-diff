@@ -1,0 +1,46 @@
+{
+  "storage": [
+    {
+      "astId": 292,
+      "contract": "src/Storage.sol:StorageUpgrade_Mapping_V2_Bad",
+      "label": "m1",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_mapping(t_uint256,t_uint256)"
+    },
+    {
+      "astId": 296,
+      "contract": "src/Storage.sol:StorageUpgrade_Mapping_V2_Bad",
+      "label": "m2",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_mapping(t_bool,t_uint256)"
+    }
+  ],
+  "types": {
+    "t_bool": {
+      "encoding": "inplace",
+      "label": "bool",
+      "numberOfBytes": "1"
+    },
+    "t_mapping(t_bool,t_uint256)": {
+      "encoding": "mapping",
+      "key": "t_bool",
+      "label": "mapping(bool => uint256)",
+      "numberOfBytes": "32",
+      "value": "t_uint256"
+    },
+    "t_mapping(t_uint256,t_uint256)": {
+      "encoding": "mapping",
+      "key": "t_uint256",
+      "label": "mapping(uint256 => uint256)",
+      "numberOfBytes": "32",
+      "value": "t_uint256"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

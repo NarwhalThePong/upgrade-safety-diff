@@ -1,0 +1,27 @@
+{
+  "storage": [
+    {
+      "astId": 3,
+      "contract": "src/PackV1.sol:PackV1",
+      "label": "x",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint128"
+    },
+    {
+      "astId": 5,
+      "contract": "src/PackV1.sol:PackV1",
+      "label": "y",
+      "offset": 16,
+      "slot": "0",
+      "type": "t_uint128"
+    }
+  ],
+  "types": {
+    "t_uint128": {
+      "encoding": "inplace",
+      "label": "uint128",
+      "numberOfBytes": "16"
+    }
+  }
+}

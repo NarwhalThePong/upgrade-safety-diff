@@ -1,0 +1,44 @@
+{
+  "name": "upgrade-safety-diff",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Compare two Foundry storage layouts (forge inspect <Contract> storageLayout --json) before a proxy upgrade. Checks storage layout only; not an audit.",
+  "bin": {
+    "upgrade-safety-diff": "bin/upgrade-safety-diff.js"
+  },
+  "main": "src/diff.js",
+  "files": [
+    "bin/",
+    "src/",
+    "scripts/",
+    "README.md",
+    "LICENSE",
+    "LAUNCH_NOTE.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "solidity",
+    "foundry",
+    "proxy",
+    "upgrade",
+    "storage-layout",
+    "upgradeable",
+    "security-review"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NarwhalThePong/upgrade-safety-diff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NarwhalThePong/upgrade-safety-diff/issues"
+  },
+  "homepage": "https://github.com/NarwhalThePong/upgrade-safety-diff#readme"
+}

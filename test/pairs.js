@@ -1,0 +1,36 @@
+'use strict';
+// [dir, old, new, safe?, checks expected at medium or above]
+const O = 'fixtures/layouts', Z = 'fixtures/oz-upgrades/layouts', S = 'StorageUpgrade_';
+module.exports = [
+  [O, 'PlainV1', 'PlainV2Append', true, []],
+  [O, 'PlainV1', 'PlainV2Insert', false, ['C1-slot-shift', 'C5-insert']],
+  [O, 'PlainV1', 'PlainV2Reorder', false, ['C1-slot-shift', 'C4-reorder']],
+  [O, 'PlainV1', 'PlainV2Deleted', false, ['C3-deleted']],
+  [O, 'PackV1', 'PackV2Widen', false, ['C1-slot-shift', 'C2-type-size']],
+  [O, 'PackV1', 'PackV2Retype', false, ['C2-type-size']],
+  [O, 'GapV1', 'GapV2Ok', true, []],
+  [O, 'GapV1', 'GapV2NotReduced', false, ['C7-gap']],
+  [O, 'GapV1', 'GapV2OverReduced', false, ['C7-gap']],
+  [O, 'StructV1', 'StructV2Insert', false, ['C6-struct', 'C8-mapping-array']],
+  [O, 'StructV1', 'StructV2Same', true, []],
+  [O, 'MapV1', 'MapV2Changed', false, ['C8-mapping-array']],
+  [O, 'MapV1', 'MapV2Same', true, []],
+  // OpenZeppelin openzeppelin-upgrades test pairs; safe/unsafe as asserted in packages/core/src/storage.test.ts
+  [Z, S + 'Equal_V1', S + 'Equal_V2', true, []],
+  [Z, S + 'Append_V1', S + 'Append_V2', true, []],
+  [Z, S + 'Delete_V1', S + 'Delete_V2', false, ['C1-slot-shift', 'C3-deleted']],
+  [Z, S + 'Replace_V1', S + 'Replace_V2', false, ['C3-deleted', 'C5-insert']],
+  [Z, S + 'Struct_V1', S + 'Struct_V2_Ok', true, []],
+  [Z, S + 'Struct_V1', S + 'Struct_V2_Bad', false, ['C1-slot-shift', 'C2-type-size', 'C6-struct', 'C8-mapping-array']],
+  [Z, S + 'Array_V1', S + 'Array_V2_Ok', true, []],
+  [Z, S + 'Array_V1', S + 'Array_V2_Bad', false, ['C1-slot-shift', 'C2-type-size', 'C8-mapping-array']],
+  [Z, S + 'Mapping_V1', S + 'Mapping_V2_Ok', true, []],
+  [Z, S + 'Mapping_V1', S + 'Mapping_V2_Bad', false, ['C8-mapping-array']],
+  [Z, S + 'Gap_V1', S + 'Gap_V2_Ok', true, []],
+  [Z, S + 'Gap_V1', S + 'Gap_V2_Bad1', false, ['C1-slot-shift', 'C7-gap']],
+  [Z, S + 'Gap_V1', S + 'Gap_V2_Bad2', false, ['C3-deleted']],
+  [Z, S + 'Gap_V1', S + 'Gap_V2_Bad3', false, ['C1-slot-shift', 'C7-gap']],
+  [Z, S + 'Gap_V1', S + 'Gap_V2_Bad4', false, ['C1-slot-shift', 'C7-gap']],
+  [Z, S + 'Gap_V1', S + 'Gap_V2_Bad5', false, ['C1-slot-shift', 'C7-gap']],
+  [Z, S + 'MultiConsumeGap_V1', S + 'MultiConsumeGap_V2_Ok', true, []],
+];

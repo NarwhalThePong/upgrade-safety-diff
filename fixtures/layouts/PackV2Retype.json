@@ -1,0 +1,32 @@
+{
+  "storage": [
+    {
+      "astId": 3,
+      "contract": "src/PackV2Retype.sol:PackV2Retype",
+      "label": "x",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_int128"
+    },
+    {
+      "astId": 5,
+      "contract": "src/PackV2Retype.sol:PackV2Retype",
+      "label": "y",
+      "offset": 16,
+      "slot": "0",
+      "type": "t_uint128"
+    }
+  ],
+  "types": {
+    "t_int128": {
+      "encoding": "inplace",
+      "label": "int128",
+      "numberOfBytes": "16"
+    },
+    "t_uint128": {
+      "encoding": "inplace",
+      "label": "uint128",
+      "numberOfBytes": "16"
+    }
+  }
+}

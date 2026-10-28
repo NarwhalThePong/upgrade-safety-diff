@@ -1,0 +1,57 @@
+{
+  "storage": [
+    {
+      "astId": 320,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Ok",
+      "label": "a",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 322,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Ok",
+      "label": "b",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 324,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Ok",
+      "label": "c",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 328,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Ok",
+      "label": "__gap",
+      "offset": 0,
+      "slot": "3",
+      "type": "t_array(t_uint256)47_storage"
+    },
+    {
+      "astId": 330,
+      "contract": "src/Storage.sol:StorageUpgrade_Gap_V2_Ok",
+      "label": "z",
+      "offset": 0,
+      "slot": "50",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_array(t_uint256)47_storage": {
+      "encoding": "inplace",
+      "label": "uint256[47]",
+      "numberOfBytes": "1504",
+      "base": "t_uint256"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

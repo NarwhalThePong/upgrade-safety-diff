@@ -1,0 +1,131 @@
+{
+  "storage": [
+    {
+      "astId": 51,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+      "label": "data1",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_struct(Struct1)48_storage"
+    },
+    {
+      "astId": 54,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+      "label": "data2",
+      "offset": 0,
+      "slot": "4",
+      "type": "t_struct(Struct1)48_storage"
+    },
+    {
+      "astId": 59,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+      "label": "m",
+      "offset": 0,
+      "slot": "8",
+      "type": "t_mapping(t_uint256,t_struct(Struct1)48_storage)"
+    },
+    {
+      "astId": 64,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+      "label": "a1",
+      "offset": 0,
+      "slot": "9",
+      "type": "t_array(t_struct(Struct1)48_storage)10_storage"
+    },
+    {
+      "astId": 69,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+      "label": "a2",
+      "offset": 0,
+      "slot": "49",
+      "type": "t_array(t_struct(Struct1)48_storage)10_storage"
+    },
+    {
+      "astId": 72,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+      "label": "data3",
+      "offset": 0,
+      "slot": "89",
+      "type": "t_struct(Struct1)48_storage"
+    }
+  ],
+  "types": {
+    "t_array(t_struct(Struct1)48_storage)10_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V1.Struct1[10]",
+      "numberOfBytes": "1280",
+      "base": "t_struct(Struct1)48_storage"
+    },
+    "t_mapping(t_uint256,t_struct(Struct1)48_storage)": {
+      "encoding": "mapping",
+      "key": "t_uint256",
+      "label": "mapping(uint256 => struct StorageUpgrade_Struct_V1.Struct1)",
+      "numberOfBytes": "32",
+      "value": "t_struct(Struct1)48_storage"
+    },
+    "t_string_storage": {
+      "encoding": "bytes",
+      "label": "string",
+      "numberOfBytes": "32"
+    },
+    "t_struct(Struct1)48_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V1.Struct1",
+      "numberOfBytes": "128",
+      "members": [
+        {
+          "astId": 40,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+          "label": "x",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        },
+        {
+          "astId": 42,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+          "label": "s1",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_string_storage"
+        },
+        {
+          "astId": 44,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+          "label": "s2",
+          "offset": 0,
+          "slot": "2",
+          "type": "t_string_storage"
+        },
+        {
+          "astId": 47,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+          "label": "inner",
+          "offset": 0,
+          "slot": "3",
+          "type": "t_struct(StructInner)38_storage"
+        }
+      ]
+    },
+    "t_struct(StructInner)38_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V1.StructInner",
+      "numberOfBytes": "32",
+      "members": [
+        {
+          "astId": 37,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V1",
+          "label": "y",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        }
+      ]
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

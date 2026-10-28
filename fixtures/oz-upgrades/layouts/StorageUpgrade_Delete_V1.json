@@ -1,0 +1,32 @@
+{
+  "storage": [
+    {
+      "astId": 29,
+      "contract": "src/Storage.sol:StorageUpgrade_Delete_V1",
+      "label": "x1",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 31,
+      "contract": "src/Storage.sol:StorageUpgrade_Delete_V1",
+      "label": "x2",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_address"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "storage": [
+    {
+      "astId": 11,
+      "contract": "src/StructV2Insert.sol:StructV2Insert",
+      "label": "pos",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_struct(Pos)8_storage"
+    },
+    {
+      "astId": 16,
+      "contract": "src/StructV2Insert.sol:StructV2Insert",
+      "label": "byUser",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_mapping(t_address,t_struct(Pos)8_storage)"
+    },
+    {
+      "astId": 18,
+      "contract": "src/StructV2Insert.sol:StructV2Insert",
+      "label": "z",
+      "offset": 0,
+      "slot": "3",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    },
+    "t_mapping(t_address,t_struct(Pos)8_storage)": {
+      "encoding": "mapping",
+      "key": "t_address",
+      "label": "mapping(address => struct StructV2Insert.Pos)",
+      "numberOfBytes": "32",
+      "value": "t_struct(Pos)8_storage"
+    },
+    "t_struct(Pos)8_storage": {
+      "encoding": "inplace",
+      "label": "struct StructV2Insert.Pos",
+      "numberOfBytes": "64",
+      "members": [
+        {
+          "astId": 3,
+          "contract": "src/StructV2Insert.sol:StructV2Insert",
+          "label": "amt",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        },
+        {
+          "astId": 5,
+          "contract": "src/StructV2Insert.sol:StructV2Insert",
+          "label": "who",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_address"
+        },
+        {
+          "astId": 7,
+          "contract": "src/StructV2Insert.sol:StructV2Insert",
+          "label": "t",
+          "offset": 20,
+          "slot": "1",
+          "type": "t_uint64"
+        }
+      ]
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    },
+    "t_uint64": {
+      "encoding": "inplace",
+      "label": "uint64",
+      "numberOfBytes": "8"
+    }
+  }
+}

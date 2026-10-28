@@ -1,0 +1,40 @@
+{
+  "storage": [
+    {
+      "astId": 195,
+      "contract": "src/Storage.sol:StorageUpgrade_Replace_V2",
+      "label": "x1",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 197,
+      "contract": "src/Storage.sol:StorageUpgrade_Replace_V2",
+      "label": "renamed",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_string_storage"
+    },
+    {
+      "astId": 199,
+      "contract": "src/Storage.sol:StorageUpgrade_Replace_V2",
+      "label": "x3",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_string_storage": {
+      "encoding": "bytes",
+      "label": "string",
+      "numberOfBytes": "32"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

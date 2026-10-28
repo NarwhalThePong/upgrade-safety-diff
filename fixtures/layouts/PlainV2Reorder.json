@@ -1,0 +1,32 @@
+{
+  "storage": [
+    {
+      "astId": 3,
+      "contract": "src/PlainV2Reorder.sol:PlainV2Reorder",
+      "label": "owner",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_address"
+    },
+    {
+      "astId": 5,
+      "contract": "src/PlainV2Reorder.sol:PlainV2Reorder",
+      "label": "a",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

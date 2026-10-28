@@ -1,0 +1,41 @@
+{
+  "storage": [
+    {
+      "astId": 3,
+      "contract": "src/GapV2NotReduced.sol:GapV2NotReduced",
+      "label": "a",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 5,
+      "contract": "src/GapV2NotReduced.sol:GapV2NotReduced",
+      "label": "b",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 9,
+      "contract": "src/GapV2NotReduced.sol:GapV2NotReduced",
+      "label": "__gap",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_array(t_uint256)48_storage"
+    }
+  ],
+  "types": {
+    "t_array(t_uint256)48_storage": {
+      "encoding": "inplace",
+      "label": "uint256[48]",
+      "numberOfBytes": "1536",
+      "base": "t_uint256"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

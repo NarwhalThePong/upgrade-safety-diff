@@ -1,0 +1,178 @@
+{
+  "storage": [
+    {
+      "astId": 101,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+      "label": "data1",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_struct(Struct2)86_storage"
+    },
+    {
+      "astId": 104,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+      "label": "data2",
+      "offset": 0,
+      "slot": "4",
+      "type": "t_struct(Struct2)86_storage"
+    },
+    {
+      "astId": 109,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+      "label": "m",
+      "offset": 0,
+      "slot": "8",
+      "type": "t_mapping(t_uint256,t_struct(Struct2Plus)98_storage)"
+    },
+    {
+      "astId": 114,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+      "label": "a1",
+      "offset": 0,
+      "slot": "9",
+      "type": "t_array(t_struct(Struct2)86_storage)10_storage"
+    },
+    {
+      "astId": 119,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+      "label": "a2",
+      "offset": 0,
+      "slot": "49",
+      "type": "t_array(t_struct(Struct2)86_storage)10_storage"
+    },
+    {
+      "astId": 122,
+      "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+      "label": "data3",
+      "offset": 0,
+      "slot": "89",
+      "type": "t_struct(Struct2)86_storage"
+    }
+  ],
+  "types": {
+    "t_array(t_struct(Struct2)86_storage)10_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V2_Ok.Struct2[10]",
+      "numberOfBytes": "1280",
+      "base": "t_struct(Struct2)86_storage"
+    },
+    "t_mapping(t_uint256,t_struct(Struct2Plus)98_storage)": {
+      "encoding": "mapping",
+      "key": "t_uint256",
+      "label": "mapping(uint256 => struct StorageUpgrade_Struct_V2_Ok.Struct2Plus)",
+      "numberOfBytes": "32",
+      "value": "t_struct(Struct2Plus)98_storage"
+    },
+    "t_string_storage": {
+      "encoding": "bytes",
+      "label": "string",
+      "numberOfBytes": "32"
+    },
+    "t_struct(Struct2)86_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V2_Ok.Struct2",
+      "numberOfBytes": "128",
+      "members": [
+        {
+          "astId": 78,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "x",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        },
+        {
+          "astId": 80,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "s1",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_string_storage"
+        },
+        {
+          "astId": 82,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "s2",
+          "offset": 0,
+          "slot": "2",
+          "type": "t_string_storage"
+        },
+        {
+          "astId": 85,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "inner",
+          "offset": 0,
+          "slot": "3",
+          "type": "t_struct(StructInner)76_storage"
+        }
+      ]
+    },
+    "t_struct(Struct2Plus)98_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V2_Ok.Struct2Plus",
+      "numberOfBytes": "160",
+      "members": [
+        {
+          "astId": 88,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "x",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        },
+        {
+          "astId": 90,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "s1",
+          "offset": 0,
+          "slot": "1",
+          "type": "t_string_storage"
+        },
+        {
+          "astId": 92,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "s2",
+          "offset": 0,
+          "slot": "2",
+          "type": "t_string_storage"
+        },
+        {
+          "astId": 95,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "inner",
+          "offset": 0,
+          "slot": "3",
+          "type": "t_struct(StructInner)76_storage"
+        },
+        {
+          "astId": 97,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "z",
+          "offset": 0,
+          "slot": "4",
+          "type": "t_uint256"
+        }
+      ]
+    },
+    "t_struct(StructInner)76_storage": {
+      "encoding": "inplace",
+      "label": "struct StorageUpgrade_Struct_V2_Ok.StructInner",
+      "numberOfBytes": "32",
+      "members": [
+        {
+          "astId": 75,
+          "contract": "src/Storage.sol:StorageUpgrade_Struct_V2_Ok",
+          "label": "y",
+          "offset": 0,
+          "slot": "0",
+          "type": "t_uint256"
+        }
+      ]
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "storage": [
+    {
+      "astId": 34,
+      "contract": "src/Storage.sol:StorageUpgrade_Delete_V2",
+      "label": "x2",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_address"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    }
+  }
+}

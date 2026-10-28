@@ -1,0 +1,19 @@
+{
+  "storage": [
+    {
+      "astId": 3,
+      "contract": "src/PlainV2Deleted.sol:PlainV2Deleted",
+      "label": "a",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}

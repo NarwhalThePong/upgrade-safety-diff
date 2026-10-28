@@ -1,0 +1,27 @@
+{
+  "storage": [
+    {
+      "astId": 399,
+      "contract": "src/Storage.sol:StorageUpgrade_MultiConsumeGap_V2_Ok",
+      "label": "a",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_uint256"
+    },
+    {
+      "astId": 401,
+      "contract": "src/Storage.sol:StorageUpgrade_MultiConsumeGap_V2_Ok",
+      "label": "b",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}
