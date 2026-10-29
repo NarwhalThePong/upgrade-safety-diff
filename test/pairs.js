@@ -33,4 +33,6 @@ module.exports = [
   [Z, S + 'Gap_V1', S + 'Gap_V2_Bad4', false, ['C1-slot-shift', 'C7-gap']],
   [Z, S + 'Gap_V1', S + 'Gap_V2_Bad5', false, ['C1-slot-shift', 'C7-gap']],
   [Z, S + 'MultiConsumeGap_V1', S + 'MultiConsumeGap_V2_Ok', true, []],
+  [O, 'AddrRetype_RegistryV1', 'AddrRetype_RegistryV2', true, []],
+  [O, 'AddrRetype_RegistryV1', 'AddrRetype_RegistryV2Bad', false, ['C2-type-size']],
 ];

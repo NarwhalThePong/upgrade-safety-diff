@@ -95,6 +95,10 @@ function diff(oldL, newL) {
       continue;
     }
     const b1 = nbytes(ot, v.type), b2 = nbytes(nt, w.type);
+    // address <-> contract/interface types, and address <-> address payable, share the same
+    // 20-byte encoding, so the stored bits mean the same thing (OpenZeppelin/openzeppelin-upgrades#687).
+    const addrLike = s => /^(address( payable)?|contract \w+)$/.test(s);
+    if (b1 === b2 && b1 === 20 && addrLike(lbl(ot, v.type)) && addrLike(lbl(nt, w.type))) { add('C2-type-size', 'info', v.label, `${v.label} ${lbl(ot, v.type)} -> ${lbl(nt, w.type)}: both are 20-byte addresses, the stored value is read the same way`); continue; }
     if (b1 !== b2) add('C2-type-size', 'critical', v.label, `${v.label} ${lbl(ot, v.type)} (${b1} bytes) -> ${lbl(nt, w.type)} (${b2} bytes) in place; packing and later slots can shift`);
     else add('C2-type-size', 'high', v.label, `${v.label} ${lbl(ot, v.type)} -> ${lbl(nt, w.type)} (same size); existing bits are reinterpreted`);
   }

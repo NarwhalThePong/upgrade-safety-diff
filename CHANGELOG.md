@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-10-28
+
+- C2: `address`, `address payable` and contract/interface types are treated as compatible (same 20-byte value) and reported at info instead of high (OpenZeppelin/openzeppelin-upgrades#687). New fixture pair AddrRetype_* built with forge.
+
 ## 0.1.1 - 2026-10-28
 
 - README: new Quick start section with a self-contained example that runs from an empty folder. No code changes.

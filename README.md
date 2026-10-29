@@ -67,7 +67,7 @@ Variables are matched by name. State variable names are unique across an inherit
 | ID | What it looks for | Severity |
 |---|---|---|
 | C1-slot-shift | An existing variable's slot or offset changed | critical |
-| C2-type-size | Type changed in place: different size / same size, different type | critical / high |
+| C2-type-size | Type changed in place: different size / same size, different type / address <-> contract or interface | critical / high / info |
 | C3-deleted | Variable removed (its slot can be reused later). A same-slot, same-type name change is reported as a likely rename (info) | high |
 | C4-reorder | Surviving variables in a different relative order | high |
 | C5-insert | New variable declared before existing ones / reusing a removed variable's slot / taking space from a `__gap` or appended | critical / high / info |
@@ -86,6 +86,19 @@ critical 2  high 0  medium 0  info 0
 
 [CRITICAL] C1-slot-shift owner: owner moved slot 1.0 -> 2.0; the proxy's existing value stays at the old slot
 [CRITICAL] C5-insert c: new c at slot 1.0 is declared before existing variables; everything after it shifts
+```
+
+### Interface to address retype (new in 0.1.2)
+
+Changing `IOracle public oracle;` to `address public oracle;` keeps the same 20-byte value, but layout checkers often reject it and push people to skip the whole check (see [OpenZeppelin/openzeppelin-upgrades#687](https://github.com/OpenZeppelin/openzeppelin-upgrades/issues/687)). `address`, `address payable` and contract/interface types are now treated as compatible and reported at `info`. A retype to a different kind of value (for example `uint160`) is still `high`:
+
+```
+$ npx upgrade-safety-diff fixtures/layouts/AddrRetype_RegistryV1.json fixtures/layouts/AddrRetype_RegistryV2.json --fail-on high
+[INFO] C2-type-size oracle: oracle contract IOracle -> address: both are 20-byte addresses, the stored value is read the same way
+$ echo $?
+0
+$ npx upgrade-safety-diff fixtures/layouts/AddrRetype_RegistryV1.json fixtures/layouts/AddrRetype_RegistryV2Bad.json --fail-on high
+[HIGH] C2-type-size oracle: oracle contract IOracle -> uint160 (same size); existing bits are reinterpreted
 ```
 
 ## Known limits

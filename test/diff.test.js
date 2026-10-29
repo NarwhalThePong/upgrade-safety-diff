@@ -64,3 +64,8 @@ test('CLI formats and errors', () => {
   assert.strictEqual(run([L('PlainV1'), L('PlainV1'), '--fail-on', 'bogus']).code, 2);
   assert.strictEqual(run([L('PlainV1'), L('PlainV1'), '--bogus']).code, 2);
 });
+
+test('interface/contract -> address retype is info, not high (openzeppelin-upgrades#687)', () => {
+  const r = diff(rd('fixtures/layouts', 'AddrRetype_RegistryV1'), rd('fixtures/layouts', 'AddrRetype_RegistryV2'));
+  assert.deepStrictEqual(r.findings.map(f => [f.check, f.severity, f.label]), [['C2-type-size', 'info', 'oracle']]);
+});
