@@ -8,6 +8,37 @@ Compare two Foundry storage layouts before a proxy upgrade. You give it the layo
 
 No dependencies. Node 18+.
 
+## Quick start
+
+No install needed (Node 18+). From a Foundry project:
+
+```
+forge inspect MyVaultV1 storageLayout --json > v1.json
+forge inspect MyVaultV2 storageLayout --json > v2.json
+npx upgrade-safety-diff v1.json v2.json --fail-on high
+```
+
+### Example: a variable inserted in the middle
+
+`v1.json` has `owner` (slot 0) and `total` (slot 1). `v2.json` adds `paused` between them:
+
+```
+echo '{"storage":[{"astId":1,"contract":"src/V.sol:V","label":"owner","offset":0,"slot":"0","type":"t_address"},{"astId":2,"contract":"src/V.sol:V","label":"total","offset":0,"slot":"1","type":"t_uint256"}],"types":{"t_address":{"encoding":"inplace","label":"address","numberOfBytes":"20"},"t_uint256":{"encoding":"inplace","label":"uint256","numberOfBytes":"32"}}}' > v1.json
+echo '{"storage":[{"astId":1,"contract":"src/V.sol:V","label":"owner","offset":0,"slot":"0","type":"t_address"},{"astId":3,"contract":"src/V.sol:V","label":"paused","offset":0,"slot":"1","type":"t_uint256"},{"astId":2,"contract":"src/V.sol:V","label":"total","offset":0,"slot":"2","type":"t_uint256"}],"types":{"t_address":{"encoding":"inplace","label":"address","numberOfBytes":"20"},"t_uint256":{"encoding":"inplace","label":"uint256","numberOfBytes":"32"}}}' > v2.json
+npx upgrade-safety-diff v1.json v2.json --fail-on high
+```
+
+Output (exit code 1):
+
+```
+critical 2  high 0  medium 0  info 0
+
+[CRITICAL] C1-slot-shift total: total moved slot 1.0 -> 2.0; the proxy's existing value stays at the old slot
+[CRITICAL] C5-insert paused: new paused at slot 1.0 is declared before existing variables; everything after it shifts
+```
+
+Moving `paused` after `total` (or taking it from a `__gap`) clears both findings.
+
 ## Usage
 
 ```

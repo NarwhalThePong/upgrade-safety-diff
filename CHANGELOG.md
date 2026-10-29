@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 - 2026-10-28
+
+- README: new Quick start section with a self-contained example that runs from an empty folder. No code changes.
+
 ## 0.1.0 (2026-10-28)
 - First local build: CLI comparing two `forge inspect <C> storageLayout --json` files. Eight checks: slot shift, in-place type/size change, deleted variable, reorder, insert vs append, struct member layout, `__gap` consumption, mapping/dynamic-array type changes.
 - Text, `--json` and `--markdown` output, plus `--fail-on <severity>` exit codes.
