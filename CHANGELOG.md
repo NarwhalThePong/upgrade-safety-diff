@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3 - 2026-10-28
+
+- npm package now ships example layouts (and their Solidity sources) in `examples/`. Pass `example:<name>` instead of a file path; README examples now run via npx from an empty folder with no repo clone. `--help` lists the bundled names.
+
 ## 0.1.2 - 2026-10-28
 
 - C2: `address`, `address payable` and contract/interface types are treated as compatible (same 20-byte value) and reported at info instead of high (OpenZeppelin/openzeppelin-upgrades#687). New fixture pair AddrRetype_* built with forge.

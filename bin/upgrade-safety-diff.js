@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 const fs = require('fs');
+const path = require('path');
+const EX = path.join(__dirname, '..', 'examples');
 const { diff, rank } = require('../src/diff');
 const { text, markdown } = require('../src/format');
 const HELP = `upgrade-safety-diff - compare two forge storage layouts for proxy-upgrade review
@@ -16,6 +18,10 @@ Options:
   -o, --out <file>      Write output to a file
   -h, --help            Show this help
 
+Bundled examples: pass example:<name> instead of a file, e.g.
+  upgrade-safety-diff example:AddrRetype_RegistryV1 example:AddrRetype_RegistryV2
+Available: ${fs.readdirSync(EX).filter(f => f.endsWith('.json')).map(f => f.slice(0, -5)).join(', ')}
+
 Checks storage layout only. A clean result does not prove an upgrade is safe.`;
 const a = process.argv.slice(2); const files = []; let fmt = 'text', failOn = null, out = null;
 for (let i = 0; i < a.length; i++) {
@@ -28,8 +34,9 @@ for (let i = 0; i < a.length; i++) {
   else files.push(x);
 }
 if (files.length !== 2) { console.error(HELP); process.exit(2); }
+const resolve = f => f.startsWith('example:') ? path.join(EX, path.basename(f.slice(8)) + '.json') : f;
 let r;
-try { r = diff(fs.readFileSync(files[0], 'utf8'), fs.readFileSync(files[1], 'utf8')); }
+try { r = diff(fs.readFileSync(resolve(files[0]), 'utf8'), fs.readFileSync(resolve(files[1]), 'utf8')); }
 catch (e) { console.error(`error: ${e.message}`); process.exit(2); }
 r.old = files[0]; r.new = files[1];
 const s = fmt === 'json' ? JSON.stringify(r, null, 2) + '\n' : fmt === 'md' ? markdown(r) : text(r);

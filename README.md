@@ -79,9 +79,11 @@ Type comparison ignores compiler AST ids and contract-name prefixes, so `struct 
 
 ## Example
 
+The npm package ships a few example layouts (and their Solidity sources) in `examples/`. Pass `example:<name>` instead of a file path to use them, so this runs from an empty folder: `PlainV1`, `PlainV2Insert`, `AddrRetype_RegistryV1`, `AddrRetype_RegistryV2`, `AddrRetype_RegistryV2Bad` (see `--help`).
+
 ```
-$ node bin/upgrade-safety-diff.js fixtures/layouts/PlainV1.json fixtures/layouts/PlainV2Insert.json
-upgrade-safety-diff: fixtures/layouts/PlainV1.json -> fixtures/layouts/PlainV2Insert.json
+$ npx upgrade-safety-diff example:PlainV1 example:PlainV2Insert
+upgrade-safety-diff: example:PlainV1 -> example:PlainV2Insert
 critical 2  high 0  medium 0  info 0
 
 [CRITICAL] C1-slot-shift owner: owner moved slot 1.0 -> 2.0; the proxy's existing value stays at the old slot
@@ -93,11 +95,11 @@ critical 2  high 0  medium 0  info 0
 Changing `IOracle public oracle;` to `address public oracle;` keeps the same 20-byte value, but layout checkers often reject it and push people to skip the whole check (see [OpenZeppelin/openzeppelin-upgrades#687](https://github.com/OpenZeppelin/openzeppelin-upgrades/issues/687)). `address`, `address payable` and contract/interface types are now treated as compatible and reported at `info`. A retype to a different kind of value (for example `uint160`) is still `high`:
 
 ```
-$ npx upgrade-safety-diff fixtures/layouts/AddrRetype_RegistryV1.json fixtures/layouts/AddrRetype_RegistryV2.json --fail-on high
+$ npx upgrade-safety-diff example:AddrRetype_RegistryV1 example:AddrRetype_RegistryV2 --fail-on high
 [INFO] C2-type-size oracle: oracle contract IOracle -> address: both are 20-byte addresses, the stored value is read the same way
 $ echo $?
 0
-$ npx upgrade-safety-diff fixtures/layouts/AddrRetype_RegistryV1.json fixtures/layouts/AddrRetype_RegistryV2Bad.json --fail-on high
+$ npx upgrade-safety-diff example:AddrRetype_RegistryV1 example:AddrRetype_RegistryV2Bad --fail-on high
 [HIGH] C2-type-size oracle: oracle contract IOracle -> uint160 (same size); existing bits are reinterpreted
 ```
 

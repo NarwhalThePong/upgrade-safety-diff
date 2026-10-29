@@ -69,3 +69,12 @@ test('interface/contract -> address retype is info, not high (openzeppelin-upgra
   const r = diff(rd('fixtures/layouts', 'AddrRetype_RegistryV1'), rd('fixtures/layouts', 'AddrRetype_RegistryV2'));
   assert.deepStrictEqual(r.findings.map(f => [f.check, f.severity, f.label]), [['C2-type-size', 'info', 'oracle']]);
 });
+
+test('cli: example:<name> resolves bundled layouts from any cwd', () => {
+  const os = require('os');
+  let code = 0, out = '';
+  try { out = execFileSync('node', [BIN, 'example:AddrRetype_RegistryV1', 'example:AddrRetype_RegistryV2Bad', '--fail-on', 'high'], { cwd: os.tmpdir() }).toString(); } catch (e) { code = e.status; out = e.stdout.toString(); }
+  assert.strictEqual(code, 1); assert.match(out, /\[HIGH\] C2-type-size oracle/);
+  const ok = execFileSync('node', [BIN, 'example:AddrRetype_RegistryV1', 'example:AddrRetype_RegistryV2', '--fail-on', 'high'], { cwd: os.tmpdir() }).toString();
+  assert.match(ok, /\[INFO\] C2-type-size oracle/);
+});

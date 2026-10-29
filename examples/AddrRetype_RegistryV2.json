@@ -1,0 +1,40 @@
+{
+  "storage": [
+    {
+      "astId": 17,
+      "contract": "src/R.sol:RegistryV2",
+      "label": "owner",
+      "offset": 0,
+      "slot": "0",
+      "type": "t_address"
+    },
+    {
+      "astId": 19,
+      "contract": "src/R.sol:RegistryV2",
+      "label": "oracle",
+      "offset": 0,
+      "slot": "1",
+      "type": "t_address"
+    },
+    {
+      "astId": 21,
+      "contract": "src/R.sol:RegistryV2",
+      "label": "fee",
+      "offset": 0,
+      "slot": "2",
+      "type": "t_uint256"
+    }
+  ],
+  "types": {
+    "t_address": {
+      "encoding": "inplace",
+      "label": "address",
+      "numberOfBytes": "20"
+    },
+    "t_uint256": {
+      "encoding": "inplace",
+      "label": "uint256",
+      "numberOfBytes": "32"
+    }
+  }
+}
